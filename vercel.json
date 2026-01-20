@@ -1,0 +1,26 @@
+{
+    "version": 2,
+    "rewrites": [
+        {
+            "source": "/api/(.*)",
+            "destination": "/client/backend/server.js"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/client/frontend/build/$1"
+        }
+    ],
+    "builds": [
+        {
+            "src": "client/backend/server.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "client/frontend/package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "build"
+            }
+        }
+    ]
+}

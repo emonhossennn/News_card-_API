@@ -47,8 +47,12 @@ app.get('/health', (req, res) => {
   res.json({ status: 'OK', message: 'News API Server is running' });
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
-  console.log(`📰 News API endpoint: http://localhost:${PORT}/api/news/:country`);
-});
+// Start server locally if not in Vercel environment
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running on http://localhost:${PORT}`);
+    console.log(`📰 News API endpoint: http://localhost:${PORT}/api/news/:country`);
+  });
+}
+
+export default app;
