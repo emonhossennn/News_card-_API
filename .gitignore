@@ -1,0 +1,10 @@
+node_modules/
+.env
+.DS_Store
+build/
+dist/
+*.log
+.git/index.lock
+client/frontend/node_modules/
+client/backend/node_modules/
+client/frontend/build/
