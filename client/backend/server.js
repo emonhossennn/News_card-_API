@@ -43,8 +43,12 @@ app.get('/api/news/:country', async (req, res) => {
 });
 
 // Health check endpoint
-app.get('/health', (req, res) => {
+app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'News API Server is running' });
+});
+
+app.get('/health', (req, res) => {
+  res.json({ status: 'OK', message: 'News API Server is running (legacy)' });
 });
 
 // Start server locally if not in Vercel environment

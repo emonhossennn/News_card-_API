@@ -1,0 +1,11 @@
+{
+    "name": "news-app-root",
+    "private": true,
+    "workspaces": [
+        "client/frontend",
+        "client/backend"
+    ],
+    "scripts": {
+        "build": "npm run build --workspace=client/frontend"
+    }
+}

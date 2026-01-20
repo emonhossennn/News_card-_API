@@ -1,15 +1,5 @@
 {
     "version": 2,
-    "rewrites": [
-        {
-            "source": "/api/(.*)",
-            "destination": "/client/backend/server.js"
-        },
-        {
-            "source": "/(.*)",
-            "destination": "/client/frontend/build/$1"
-        }
-    ],
     "builds": [
         {
             "src": "client/backend/server.js",
@@ -21,6 +11,16 @@
             "config": {
                 "distDir": "build"
             }
+        }
+    ],
+    "rewrites": [
+        {
+            "source": "/api/(.*)",
+            "destination": "client/backend/server.js"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "client/frontend/$1"
         }
     ]
 }
